@@ -101,10 +101,20 @@ equal.addEventListener("click", () => {
   let index_arr4 = 0;
   if (arr2[index] == "+") {
     index++;
-    result = Number(arr2[index]);
+    if (arr3[index] == 0) {
+      result = Number(arr2[index]);
+    } else {
+      result = Number(arr4[index_arr4]);
+      index_arr4++;
+    }
   } else if (arr2[index] == "-") {
     index++;
-    result = -Number(arr2[index]);
+    if (arr3[index] == 0) {
+      result = -Number(arr2[index]);
+    } else {
+      result = -Number(arr4[index_arr4]);
+      index_arr4++;
+    }
   } else {
     if (arr3[index] == 0) {
       result = Number(arr2[index]);
@@ -113,6 +123,7 @@ equal.addEventListener("click", () => {
     }
     index++;
   }
+  console.log(result);
   for (let i = index; i < arr2.length; i++) {
     if (arr2[i] == "+") {
       if (arr3[i + 1] == 0) {
