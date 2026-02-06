@@ -101,31 +101,33 @@ equal.addEventListener("click", () => {
   let index_arr4 = 0;
   if (arr2[index] == "+") {
     index++;
-    result = arr2[index];
+    result = Number(arr2[index]);
   } else if (arr2[index] == "-") {
     index++;
-    result = -arr2[index];
+    result = -Number(arr2[index]);
   } else {
     if (arr3[index] == 0) {
-      result = arr2[index];
+      result = Number(arr2[index]);
     } else {
-      result = arr4[index];
+      result = Number(arr4[index]);
     }
     index++;
   }
   for (let i = index; i < arr2.length; i++) {
     if (arr2[i] == "+") {
       if (arr3[i + 1] == 0) {
-        result += arr2[i + 1];
+        result += Number(arr2[i + 1]);
       } else {
-        result += arr4[index_arr4];
+        result += Number(arr4[index_arr4]);
+        index_arr4++;
       }
     }
     if (arr2[i] == "-") {
       if (arr3[i + 1] == 0) {
-        result -= arr2[i + 1];
+        result -= Number(arr2[i + 1]);
       } else {
-        result -= arr4[index_arr4];
+        result -= Number(arr4[index_arr4]);
+        index_arr4++;
       }
     }
   }
