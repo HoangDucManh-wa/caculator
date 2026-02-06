@@ -39,7 +39,10 @@ equal.addEventListener("click", () => {
   }
   if (arr.length > 1) {
     for (let i = 0; i < arr.length - 1; i++) {
-      if (isNaN(arr[i]) && (arr[i + 1] == "*" || arr[i + 1] == "/")) {
+      if (
+        (isNaN(arr[i]) && (arr[i + 1] == "*" || arr[i + 1] == "/")) ||
+        (isNaN(arr[i + 1]) && (arr[i] == "*" || arr[i] == "/"))
+      ) {
         display.textContent = "Error";
         return;
       }
